@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style2.css">
+    <title>View note</title>
+</head>
+<body>
+    <div class="form-container">
+    <form  method="post" action="/notes/<%=note.id%>?_method=PATCH" id="f2">
+        <div class="form1">
+            <h3>Here Your note...</h3>
+         <p>Id:<span><%=note.id%></span></p>
+         <p>Email:<span><%=note.email%></span></p>
+         <p>Title:<span><%=note.title%></span></p>
+         </div>
+         <div class="form2"> 
+    
+         <textarea rows="50" cols="100" placeholder="Expresss your thoughts,work etc... here" name="content"class="text" readonly><%=note.content%></textarea>
+        <button type="submit" class="savebtn" style="display: none;">Save</button>
+        <button type="button" class="editbtn">Edit</button>
+        </div> 
+     </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            let editbtn=document.querySelector('.editbtn');
+            let savebtn=document.querySelector('.savebtn');
+            let textarea=document.querySelector('.text');
+
+            editbtn.addEventListener('click',()=>{
+                editbtn.style.display="none";
+                textarea.removeAttribute('readonly');
+                textarea.focus();
+                savebtn.style.display="block"; 
+                savebtn.classList.add('design');
+            })
+        })
+    </script>
+</body>
+</html>

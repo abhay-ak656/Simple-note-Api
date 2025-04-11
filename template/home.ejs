@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple-notes</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="nav">
+    <h1>Notes</h1>
+    <form method="get" action="/notes/new">
+        <button type="submit" id="create">Create Note</button>
+    </form>
+    </div>
+    <div class="note-contrainer">
+    <%for(let note of notes){%>
+    <div class="notes">
+        <div class="title"><%=note.title%>
+        </div>
+        <div class="control-btns">
+        <form method="get" action="/notes/<%=note.id%>">
+            <button type="submit" id="view">view</button>
+        </form>
+        <form method="post" action="/notes/<%=note.id%>?_method=DELETE">
+            <button type="submit" id="del">delete</button>
+        </form>
+        </div>
+    </div>
+    <%}%>
+    </div>
+</body>
+</html>

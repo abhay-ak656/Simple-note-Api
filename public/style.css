@@ -1,0 +1,101 @@
+body{
+    background-color: #2B2B2B;
+    color: white;
+}
+
+.note-contrainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+.notes{
+    height: 100px;
+    width: 45%;
+   border-radius: 1.2rem;
+   box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.959);
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+   margin: 1rem
+}
+
+@media(max-width:450px){
+    .notes{
+        height: 130px;
+        width:100%;
+    }
+}
+.notes .title{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    margin-left: 1rem;
+}
+.notes .control-btns{
+    flex: 0;
+    display: flex;
+    position: relative;
+    top: 100px;
+    opacity: 0;
+    margin-left: 0.7rem;
+    overflow: hidden;
+}
+
+.title ,.control-btns{
+    transition: flex 0.3s ease-in, opacity 0.3s ease-in;
+}
+
+.notes:hover .title{
+    flex:0.5;
+}
+
+.notes:hover .control-btns{
+    flex: 0.5;
+    opacity: 1;
+    align-items: center;
+    top: 0;
+}
+.control-btns button{
+     margin: 0 0.5rem;
+    text-align: center;
+ padding: 0.9rem;
+    border-radius: 0.7rem; 
+    border: none;
+}
+#view{
+    background-color: green;
+    color: white;
+}
+
+ #updt{
+    background-color: yellow;
+    color: black;
+}
+
+ #del{
+    background-color: red;
+    color: white;
+}
+
+.nav{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.nav form{
+    align-self: center;
+    justify-self: center;
+}
+
+.nav button{
+    width: 10.2rem;
+    font-size: large;
+    border-radius: 0.8rem;
+    padding: 0.6rem;
+    background-color: #3DC2EC;
+    color: black;
+    border: none;
+    margin-right: 1rem;
+}

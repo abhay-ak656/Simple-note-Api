@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style2.css">
+    <title>View note</title>
+</head>
+<body>
+    <div class="form-container">
+    <form  method="p" action="/notes/<%=note.id%>" id="f2">
+        <div class="form">
+            <h3>Here Your note...</h3>
+         <p>Id:<span><%=note.id%></span></p>
+         <p>Email:<span><%=note.email%></span></p>
+         <p>Title:<span><%=note.title%></span></p>
+         <textarea rows="50" cols="100" placeholder="Expresss your thoughts,work etc... here" name="content"class="text"><%=note.content%></textarea>
+        <button type="submit" class="editbtn">Edit</button>
+        </div> 
+     </form>
+    </div>
+</body>
+</html>
